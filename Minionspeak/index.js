@@ -11,10 +11,9 @@ const emojiUrl = "https://api.funtranslations.com/translate/emoji.json?text="
 async function translated(){
     const text = textBox.value;
     if (text !== ''){
-        // const res = await fetch(minionUrl+text);
-        // const data= await res.json();
-        // const translatedText = data.contents.translated;
-        const translatedText = 'ko emmi na mamma te so ils sont ici'
+        const res = await fetch(minionUrl+text);
+        const data= await res.json();
+        const translatedText = data.contents.translated;
         var counter=0;
         var finalText;
         const typing = setInterval(()=>{
@@ -26,9 +25,9 @@ async function translated(){
                 clearInterval(typing);
             }
         },100);
-        // translatedBox.innerHTML = `<p>${data.contents.translated}</p>`;
+        translatedBox.innerHTML = `<p>${data.contents.translated}</p>`;
+        responsiveVoice.speak("The translated text is "+ data.contents.translated);
     
-        // responsiveVoice.speak("The translated text is "+ data.contents.translated);
     }
     
 }
