@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap");
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 5vh 15vw;
+  background-color: #161623;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, #F5DA85), color-stop(70%, #286195));
+  background: linear-gradient(to bottom, #F5DA85 70%, #286195 70%);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 0.9rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 2px 2px 5px grey;
+          box-shadow: inset 2px 2px 5px grey;
+  background: #bce7e7;
+  border-radius: 2cm;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left top, left bottom, from(#F5DA85), to(#286195));
+  background: linear-gradient(#F5DA85, #286195);
+  background: slategrey;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  border-radius: 2cm;
+}
+
+/* Handle on hover */
+main {
+  position: relative;
+  z-index: 100;
+  padding: 5vw;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-shadow: inset 5px 5px 20px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 5px 5px 20px 20px rgba(0, 0, 0, 0.5);
+}
+
+main > * {
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+main h1 {
+  color: #286195;
+  font-size: 3.5rem;
+  font-family: 'ZCOOL KuaiLe',cursive,sans-serif;
+  margin-top: -30px;
+}
+
+main div, main textarea {
+  width: 100%;
+  height: 150px;
+  border: solid 2px #286195;
+  border-radius: 5px;
+  padding: 10px;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
+main button {
+  font-size: 1.2rem;
+  padding: 15px;
+  border-radius: 5px;
+  background-image: linear-gradient(45deg, #286195, #F5DA85);
+  color: #fff;
+  border: solid 1px #286195;
+}
+
+main button:hover {
+  background-image: linear-gradient(45deg, #F5DA85, #286195);
+}
+
+main button:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+img {
+  position: absolute;
+}
+
+img:nth-child(1) {
+  top: 65%;
+  right: 5%;
+}
+
+img:nth-child(2) {
+  top: 50%;
+  width: 59%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -52%);
+          transform: translate(-50%, -52%);
+}
+
+img:nth-child(3) {
+  top: 35%;
+  left: -14%;
+}
+/*# sourceMappingURL=style.css.map */

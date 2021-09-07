@@ -1,0 +1,131 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// body{
+//     min-height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: orange;
+//     padding: 10vh 15vw;
+// }
+
+body{
+    padding: 5vh 15vw;
+    background-color: hsl(240, 23%, 11%);
+    background: linear-gradient(to bottom, $bgPrimary 70%, $gradient1 70%);
+    // background-image: url("images/cool-background.png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 0.9rem;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 2px 2px 5px grey;
+    background: rgb(188, 231, 231); 
+    border-radius: 2cm;
+    
+    
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: linear-gradient($bgPrimary, $gradient1); 
+background: slategrey;
+box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+// background: yellow;
+border-radius:2cm;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+// background: linear-gradient($gradientLighter, $gradientDarker); 
+}
+
+main{
+    position: relative;
+    z-index: 100;
+    padding: 5vw;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: inset 5px 5px 20px 20px rgba(0,0,0,0.5);
+    >*{
+        margin-top: 30px;
+        border-radius: 5px;
+    }
+    
+    h1{
+        color: $gradient1;
+        font-size: 3.5rem;
+        font-family: 'ZCOOL KuaiLe',cursive,sans-serif;
+        margin-top: -30px;
+    }
+    
+    div,textarea{
+        width: 100%;
+        height: 150px;
+        border: solid 2px $gradient1;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+    }
+
+    button{
+        font-size: 1.2rem;
+        padding: 15px;
+        border-radius: 5px;
+        background-image: linear-gradient(45deg, $gradient1, $bgPrimary);
+        color: #fff;
+        border: solid 1px $gradient1;
+        
+        &:hover{
+            background-image: linear-gradient(45deg, $bgPrimary,$gradient1);
+        }
+        &:active{
+            transform: scale(0.98);
+
+        }
+    }
+
+    
+    
+}
+img{
+    position: absolute;
+    
+    &:nth-child(1){
+        top: 65%;
+        right: 5%;
+    }
+    
+    &:nth-child(2){
+        top: 50%;
+        width: 59%;
+        left: 50%;
+        transform: translate(-50%,-52%);
+    }
+    
+    &:nth-child(3){
+        // width: 100px;
+        top: 35%;
+        left: -14%;
+    }
+}
