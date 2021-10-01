@@ -3,38 +3,47 @@ const translatedBox = document.querySelector('#translatedText');
 const button = document.querySelector('#submit');
 
 
-// button.addEventListener('click',translated);
-
 const minionUrl = "https://api.funtranslations.com/translate/minion.json?text=";
-const emojiUrl = "https://api.funtranslations.com/translate/emoji.json?text="
 
-async function translated(){
+function fetchData(){
     const text = textBox.value;
     if (text !== ''){
-        const res = await fetch(minionUrl+text);
-        const data= await res.json();
-        const translatedText = data.contents.translated;
-        var counter=0;
-        var finalText;
-        const typing = setInterval(()=>{
-            if(counter<translatedText.length){
-                finalText = translatedText.slice(0,counter+1);
-                translatedBox.innerHTML = finalText;
-                counter++;
-            } else{
-                clearInterval(typing);
-            }
-        },100);
-        translatedBox.innerHTML = `<p>${data.contents.translated}</p>`;
-        responsiveVoice.speak("The translated text is "+ data.contents.translated);
-    
+        fetch(minionUrl+text)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const translatedText = data.contents.translated;
+            typeText(translatedText);
+        })
+        .catch(err =>{
+            console.log(err);
+            alert("Ther's an error, please retry, if the error persists, retry after some time")
+        });
+
     }
     
+}
+
+function typeText(text){
+    let finalText;
+    var counter=0;
+   
+    const typing = setInterval(()=>{
+        if(counter<text.length){
+            finalText = text.slice(0,counter+1);
+            translatedBox.innerHTML = finalText;
+            counter++;
+        } else{
+            clearInterval(typing);
+        }
+    },100);
+    translatedBox.innerHTML = `<p>${text}</p>`;
+    responsiveVoice.speak("The translated text is "+ text);
 }
 
 document.addEventListener('keypress',(e)=>{
     if (e.key==='Enter'){
         e.preventDefault();
-        translated();
+        fetchData();
     }
 })
