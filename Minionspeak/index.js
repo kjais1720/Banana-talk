@@ -11,13 +11,13 @@ function fetchData(){
         fetch(minionUrl+text)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             const translatedText = data.contents.translated;
             typeText(translatedText);
         })
         .catch(err =>{
             console.log(err);
-            alert("Ther's an error, please retry, if the error persists, retry after some time")
+            if(err.code == 429) alert("The limit for API requests per hour has exceeded, please try after some time");
+            else alert("Ther's an error, please retry, if the error persists, retry after some time")
         });
 
     }
