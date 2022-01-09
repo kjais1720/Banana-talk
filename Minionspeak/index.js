@@ -5,7 +5,7 @@ const button = document.querySelector('#submit');
 
 const minionUrl = "https://api.funtranslations.com/translate/minion.json?text=";
 
-function fetchData(){
+let fetchData = () =>{
     const text = textBox.value;
     if (text !== ''){
         fetch(minionUrl+text)
@@ -24,7 +24,7 @@ function fetchData(){
     
 }
 
-function typeText(text){
+let typeText = text =>{
     let finalText;
     var counter=0;
    
